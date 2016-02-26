@@ -12,6 +12,9 @@
 
 		@media screen and (min-width: 769px) {
 
+			.nav-mobile {
+				display: none;
+			}
 			.nav-item {
 				display: inline;
 				padding: 5px 10px 8px 10px;
@@ -26,6 +29,17 @@
 		}
 		@media screen and (max-width: 768px) {
 
+			.nav {
+				width: 100%;
+			}
+			.nav-mobile {
+				display: block;
+			}
+			.nav-item {
+				width: 100%;
+				display: block;
+			}
+
 			.content-item {
 				display: inline-block;
 				width: 40%;
@@ -35,6 +49,17 @@
 
 		}
 		@media screen and (max-width: 320px) {
+
+			.nav {
+				width: 100%;
+			}
+			.nav-mobile {
+				display: block;
+			}
+			.nav-item {
+				width: 100%;
+				display: block;
+			}
 
 
 			.content-item {
@@ -64,14 +89,14 @@
 		.content-item .content-body img {
 			width: 100%;
 		}
-		.content-item .item-content, {
+		.content-body .item-content {
 			text-transform: uppercase;
 		}
-		.content-item .content-price, {
+		.content-item .content-price {
 			text-transform: uppercase;
 			color: orange;
 		}
-		.content-item .footer-item, {
+		.content-footer .footer-item {
 			display: inline-block;
 		}
 
@@ -84,6 +109,7 @@
 			<img src="res/logo" />
 		</div>
 		<div class="nav">
+			<div class="nav-mobile"><i class="fa fa-bars"></i></div>
 			<div class="nav-item focus">Home</div>
 			<div class="nav-item">Buy</div>
 			<div class="nav-item">Rent</div>
