@@ -26,7 +26,11 @@
 
 	<div class="slider"></div>
 	
-	<div class="slider"></div>
+	<div class="content-header">
+		<h1>THE LATEST LISTINGS</h1>
+		<p>Check out the most recent listings. There are 1,135 new properties for sale this week.</p>
+	</div>
+	<div class="content" id="content"></div>
 
 	<div class="footer">
 		<div class="footer-left"></div>
@@ -37,6 +41,71 @@
 			<a href="#"><i class="fa fa-rss"></i></a>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		var contents = [
+			{
+				title: "One of a kind",
+				text: "11 Barbata grove, nowra, nsw 2541",
+				bed: 4,
+				bath: 2,
+				garage: 2,
+				price: "$479,000",
+				image: "img-1.jpg"
+			},
+			{
+				title: "Walk to town & schools",
+				text: "125 Shoalhaven street, nowra, nsw 2541",
+				bed: 3,
+				bath: 2,
+				garage: 2,
+				price: "Auction",
+				image: "img-2.jpg"
+			},
+			{
+				title: "A hidden gem",
+				text: "13 Cornelius place, nowra, nsw 2541",
+				bed: 3,
+				bath: 2,
+				garage: 1,
+				price: "$305,000",
+				image: "img-3.jpg"
+			},
+			{
+				title: "Panoramic River Views",
+				text: "30 Riverview road, nowra, nsw 2541",
+				bed: 3,
+				bath: 2,
+				garage: 2,
+				price: "$569,000",
+				image: "img-4.jpg"
+			},
+		];
+		var html = "";
+
+		for (i in contents) {
+
+			html += 
+				"<div class='content-item'>"
+					+ "<div class='content-body'>"
+						+ "<img src='res/" + contents[i].image + "' />"
+						+ "<div class='item-header'>" + contents[i].title + "</div>"
+						+ "<div class='item-content'>" + contents[i].text + "</div>"
+					+ "</div>"
+					+ "<div class='content-footer'>"
+						+ "<div class='footer-item'><img src='res/bed.png' />" + contents[i].bed + "</div>"
+						+ "<div class='footer-item'><img src='res/bath.png' />" + contents[i].bath + "</div>"
+						+ "<div class='footer-item'><img src='res/car.png' />" + contents[i].garage + "</div>"
+					+ "</div>"
+					+ "<div class='content-price'>"
+						+ contents[i].price
+					+ "</div>"
+				+ "</div>";
+
+		}
+
+		document.getElementById("content").innerHTML = html;
+	</script>
 
 </body>
 </html>
