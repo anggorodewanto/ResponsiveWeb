@@ -224,6 +224,9 @@
 		}
 
 		.content-item {
+			vertical-align: top;
+			border: 1px solid gray;
+			border-radius: 5px;
 		}
 
 		.content-item .content-body {
@@ -237,12 +240,20 @@
 		.content-item .content-body .photo {
 			width: 100%;
 		}
+		.content-body .item-header, .content-body .item-content {
+			margin: 5px 5px;
+		}
 		.content-body .item-content {
+			font-size: .75em;
 			text-transform: uppercase;
 		}
 		.content-item .content-price {
 			text-transform: uppercase;
 			color: orange;
+			display: block;
+			position: absolute;
+			font-size: 1em;
+			bottom: 0px;
 		}
 		.content-footer .footer-item {
 			display: inline-block;
