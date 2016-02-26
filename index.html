@@ -43,6 +43,9 @@
 			.slider-button-holder a {
 				font-size: 2em;
 			}
+			.slider-button-down a {
+				font-size: 2em;
+			}
 
 			.content-item {
 				display: inline-block;
@@ -129,6 +132,9 @@
 			.slider-button-holder a {
 				font-size: 1em;
 			}
+			.slider-button-down a {
+				font-size: 1em;
+			}
 
 
 			.content-item {
@@ -201,6 +207,15 @@
 		.slider-button-holder a#next {
 			right: 0;
 		}
+		.slider-button-down a {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 0);
+			padding: 0 10px;
+			color: white;
+			background-color: black;
+		}
 
 		.content-item {
 		}
@@ -248,6 +263,9 @@
 		<div class="slider-button-holder">
 			<a href="#" id="prev"><i class="fa fa-angle-double-left"></i></a>
 			<a href="#" id="next"><i class="fa fa-angle-double-right"></i></a>
+		</div>
+		<div class="slider-button-down">
+			<a href="#" id="down"><i class="fa fa-angle-down"></i></a>
 		</div>
 	</div>
 	
@@ -345,6 +363,32 @@
 		$("#prev").click(function(){
 			$(".slider-images").css("left", 0);
 		});
+
+
+		// Automatic scroll
+		var scrolldelay = null;
+		function pageScroll() {
+			window.scrollBy(0,10);
+			scrolldelay = setTimeout('pageScroll()',100);
+		}
+
+		function stopScroll() {
+			clearTimeout(scrolldelay);
+			scrolldelay = null;
+		}
+
+		$("#down").click(function(){
+			if (scrolldelay === null)
+				pageScroll();
+			else
+				stopScroll();
+		});
+
+		window.onscroll = function(ev) {
+	    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+	        stopScroll();
+	    }
+};
 
 	</script>
 
