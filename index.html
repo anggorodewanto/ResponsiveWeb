@@ -50,8 +50,7 @@
 			.content-item {
 				display: inline-block;
 				width: 20%;
-				margin-left: 2.5%;
-				margin-right: 2.5%;
+				margin: 2.5% 2.5%;
 			}
 		}
 		@media screen and (max-width: 768px) {
@@ -91,8 +90,7 @@
 			.content-item {
 				display: inline-block;
 				width: 40%;
-				margin-left: 5%;
-				margin-right: 5%;
+				margin: 5% 5%;
 			}
 
 		}
@@ -140,8 +138,7 @@
 			.content-item {
 				display: inline-block;
 				width: 80%;
-				margin-left: 10%;
-				margin-right: 10%;
+				margin: 5% 10%;
 			}
 
 		}
@@ -228,7 +225,16 @@
 
 		.content-item {
 		}
-		.content-item .content-body img {
+
+		.content-item .content-body {
+			position: relative;
+		}
+		.content-item .content-body .sticker {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.content-item .content-body .photo {
 			width: 100%;
 		}
 		.content-body .item-content {
@@ -240,6 +246,8 @@
 		}
 		.content-footer .footer-item {
 			display: inline-block;
+			width: 30%;
+			padding: 5px 0;
 		}
 
 		.footer {
@@ -359,7 +367,8 @@
 			html += 
 				"<div class='content-item'>"
 					+ "<div class='content-body'>"
-						+ "<img src='res/" + contents[i].image + "' />"
+						+ "<img class='sticker' src='res/sticker_new' />"
+						+ "<img class='photo' src='res/" + contents[i].image + "' />"
 						+ "<div class='item-header'>" + contents[i].title + "</div>"
 						+ "<div class='item-content'>" + contents[i].text + "</div>"
 					+ "</div>"
