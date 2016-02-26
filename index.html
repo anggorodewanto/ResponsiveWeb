@@ -12,8 +12,15 @@
 
 		@media screen and (min-width: 769px) {
 
+			.logo img {
+				margin: 10px 0 10px 50px; 
+			}
 			.nav-mobile {
 				display: none;
+			}
+			.nav-list {
+				display: block;
+				height: 100px;
 			}
 			.nav-item {
 				display: inline;
@@ -29,11 +36,20 @@
 		}
 		@media screen and (max-width: 768px) {
 
+			.logo img {
+				width: 200px;
+				height: auto;
+				margin: 0 0 0 30px; 
+			}
 			.nav {
 				width: 100%;
 			}
 			.nav-mobile {
 				display: block;
+			}
+			.nav-list {
+				display: none;
+				height: auto;
 			}
 			.nav-item {
 				width: 100%;
@@ -50,11 +66,20 @@
 		}
 		@media screen and (max-width: 320px) {
 
+			.logo img {
+				width: 150px;
+				height: auto;
+				margin: 0 0 0 30px; 
+			}
 			.nav {
 				width: 100%;
 			}
 			.nav-mobile {
 				display: block;
+			}
+			.nav-list {
+				display: none;
+				height: auto;
 			}
 			.nav-item {
 				width: 100%;
@@ -77,10 +102,21 @@
 		.nav {
 			background-color: dimgray;
 		}
+		.nav-list-show {
+			display: block;
+			height: auto;
+		}
+		.nav-mobile {
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			color: white;
+		}
 		.nav-item {
 			text-transform: uppercase;
+			color: white;
 		}
-		.nav-item.focus{
+		.nav-item.focus, .nav-item:hover {
 			background-color: #333344;
 		}
 
@@ -110,13 +146,15 @@
 		</div>
 		<div class="nav">
 			<div class="nav-mobile"><i class="fa fa-bars"></i></div>
-			<div class="nav-item focus">Home</div>
-			<div class="nav-item">Buy</div>
-			<div class="nav-item">Rent</div>
-			<div class="nav-item">Open for Inspection</div>
-			<div class="nav-item">Property Alerts</div>
-			<div class="nav-item">Suburb Profile</div>
-			<div class="nav-item">Community</div>
+			<div class="nav-list">
+				<div class="nav-item focus">Home</div>
+				<div class="nav-item">Buy</div>
+				<div class="nav-item">Rent</div>
+				<div class="nav-item">Open for Inspection</div>
+				<div class="nav-item">Property Alerts</div>
+				<div class="nav-item">Suburb Profile</div>
+				<div class="nav-item">Community</div>
+			</div>
 		</div>
 	</div>
 
@@ -138,6 +176,7 @@
 		</div>
 	</div>
 
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript">
 		var contents = [
 			{
@@ -201,6 +240,12 @@
 		}
 
 		document.getElementById("content").innerHTML = html;
+
+		// Nav Menu
+		$(".nav-mobile").click(function(){
+			$(".nav-list").toggleClass("nav-list-show");
+		});
+
 	</script>
 
 </body>
