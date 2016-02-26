@@ -120,6 +120,19 @@
 			background-color: #333344;
 		}
 
+		.slider {
+			width: 100%;
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+		}
+		.slider-images {
+			width: 200%;
+		}
+		.slider-images img {
+			width: 50%;
+		}
+
 		.content-item {
 		}
 		.content-item .content-body img {
@@ -158,7 +171,16 @@
 		</div>
 	</div>
 
-	<div class="slider"></div>
+	<div class="slider">
+		<div class="slider-images">
+			<img src="res/slider-1.jpg" />
+			<img src="res/slider-2.jpg" />
+		</div>
+		<div class="slider-button-holder">
+			<a href="#" id="prev"><i class="fa fa-angle-double-left"></i></a>
+			<a href="#" id="next"><i class="fa fa-angle-double-right"></i></a>
+		</div>
+	</div>
 	
 	<div class="content-header">
 		<h1>THE LATEST LISTINGS</h1>
