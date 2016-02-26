@@ -5,6 +5,52 @@
 	<title>ResponsiveWeb</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<style type="text/css">
+
+		* {
+			box-sizing: border-box;
+		}
+
+		@media screen and (min-width: 769px) {
+
+			.nav-item {
+				display: inline;
+				padding: 5px 10px 8px 10px;
+			}
+
+			.content-item {
+				display: inline-block;
+				width: 25%;
+			}
+		}
+		@media screen and (max-width: 768px) {
+
+			.content-item {
+				display: inline-block;
+				width: 50%;
+			}
+
+		}
+		@media screen and (max-width: 320px) {
+
+
+			.content-item {
+				display: inline-block;
+				width: 100%;
+			}
+
+		}
+
+		.logo {
+			background-color: #333355;
+		}
+		.nav {
+			background-color: dimgray;
+		}
+		.nav-item.focus{
+			background-color: #333344;
+		}
+
+
 	</style>
 </head>
 <body>
@@ -14,7 +60,7 @@
 			<img src="res/logo" />
 		</div>
 		<div class="nav">
-			<div class="nav-item">Home</div>
+			<div class="nav-item focus">Home</div>
 			<div class="nav-item">Buy</div>
 			<div class="nav-item">Rent</div>
 			<div class="nav-item">Open for Inspection</div>
